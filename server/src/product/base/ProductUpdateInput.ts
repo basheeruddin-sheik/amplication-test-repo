@@ -11,14 +11,7 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import {
-  IsString,
-  IsOptional,
-  IsNumber,
-  ValidateNested,
-} from "class-validator";
-import { OrderUpdateManyWithoutProductsInput } from "./OrderUpdateManyWithoutProductsInput";
-import { Type } from "class-transformer";
+import { IsString, IsOptional, IsNumber } from "class-validator";
 @InputType()
 class ProductUpdateInput {
   @ApiProperty({
@@ -53,17 +46,5 @@ class ProductUpdateInput {
     nullable: true,
   })
   name?: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: () => OrderUpdateManyWithoutProductsInput,
-  })
-  @ValidateNested()
-  @Type(() => OrderUpdateManyWithoutProductsInput)
-  @IsOptional()
-  @Field(() => OrderUpdateManyWithoutProductsInput, {
-    nullable: true,
-  })
-  orders?: OrderUpdateManyWithoutProductsInput;
 }
 export { ProductUpdateInput };
