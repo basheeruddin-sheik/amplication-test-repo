@@ -19,8 +19,11 @@ model User {
 }
 
 model Client {
-  clientId  String   @unique
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
-  updatedAt DateTime @updatedAt
+  accessTokenExpiresIn String?
+  clientId             String   @unique
+  clientName           String?
+  clientSecret         String?
+  createdAt            DateTime @default(now())
+  id                   String   @id @default(cuid())
+  updatedAt            DateTime @updatedAt
 }

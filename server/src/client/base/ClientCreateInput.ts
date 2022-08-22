@@ -11,9 +11,20 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString } from "class-validator";
+import { IsString, IsOptional } from "class-validator";
 @InputType()
 class ClientCreateInput {
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  accessTokenExpiresIn?: string | null;
+
   @ApiProperty({
     required: true,
     type: String,
@@ -21,5 +32,27 @@ class ClientCreateInput {
   @IsString()
   @Field(() => String)
   clientId!: string;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  clientName?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  clientSecret?: string | null;
 }
 export { ClientCreateInput };

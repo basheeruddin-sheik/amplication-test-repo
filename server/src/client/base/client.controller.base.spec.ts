@@ -11,27 +11,39 @@ import { ClientService } from "../client.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  accessTokenExpiresIn: "exampleAccessTokenExpiresIn",
   clientId: "exampleClientId",
+  clientName: "exampleClientName",
+  clientSecret: "exampleClientSecret",
   createdAt: new Date(),
   id: "exampleId",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  accessTokenExpiresIn: "exampleAccessTokenExpiresIn",
   clientId: "exampleClientId",
+  clientName: "exampleClientName",
+  clientSecret: "exampleClientSecret",
   createdAt: new Date(),
   id: "exampleId",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
+    accessTokenExpiresIn: "exampleAccessTokenExpiresIn",
     clientId: "exampleClientId",
+    clientName: "exampleClientName",
+    clientSecret: "exampleClientSecret",
     createdAt: new Date(),
     id: "exampleId",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
+  accessTokenExpiresIn: "exampleAccessTokenExpiresIn",
   clientId: "exampleClientId",
+  clientName: "exampleClientName",
+  clientSecret: "exampleClientSecret",
   createdAt: new Date(),
   id: "exampleId",
   updatedAt: new Date(),
