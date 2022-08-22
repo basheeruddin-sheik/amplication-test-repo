@@ -12,7 +12,10 @@ export const ClientList = (props: ListProps): React.ReactElement => {
       pagination={<Pagination />}
     >
       <Datagrid rowClick="show">
+        <TextField label="Token Expires In" source="accessTokenExpiresIn" />
         <TextField label="ClientId" source="clientId" />
+        <TextField label="ClientName" source="clientName" />
+        <TextField label="Client Secret" source="clientSecret" />
         <DateField source="createdAt" label="Created At" />
         <TextField label="ID" source="id" />
         <DateField source="updatedAt" label="Updated At" />

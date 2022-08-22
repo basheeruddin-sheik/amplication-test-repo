@@ -48,7 +48,10 @@ export class ClientControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        accessTokenExpiresIn: true,
         clientId: true,
+        clientName: true,
+        clientSecret: true,
         createdAt: true,
         id: true,
         updatedAt: true,
@@ -71,7 +74,10 @@ export class ClientControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        accessTokenExpiresIn: true,
         clientId: true,
+        clientName: true,
+        clientSecret: true,
         createdAt: true,
         id: true,
         updatedAt: true,
@@ -95,7 +101,10 @@ export class ClientControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        accessTokenExpiresIn: true,
         clientId: true,
+        clientName: true,
+        clientSecret: true,
         createdAt: true,
         id: true,
         updatedAt: true,
@@ -128,7 +137,10 @@ export class ClientControllerBase {
         where: params,
         data: data,
         select: {
+          accessTokenExpiresIn: true,
           clientId: true,
+          clientName: true,
+          clientSecret: true,
           createdAt: true,
           id: true,
           updatedAt: true,
@@ -160,7 +172,10 @@ export class ClientControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          accessTokenExpiresIn: true,
           clientId: true,
+          clientName: true,
+          clientSecret: true,
           createdAt: true,
           id: true,
           updatedAt: true,
